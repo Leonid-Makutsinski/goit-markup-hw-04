@@ -9,7 +9,7 @@
     --secondary-2-bg-color: #F5F4FA;
 }
 html {
-    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 *,
@@ -57,7 +57,6 @@ img {
 
 .section {
     padding-top: 94px;
-    padding-bottom: 94px;
 }
 
 .section-title {
@@ -67,6 +66,8 @@ img {
   font-weight: 700;
   line-height: 1.17;
   text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
 }
 
 /* точки списка */
@@ -142,13 +143,51 @@ a {
 .header-contacts .link:focus {
     color: var(--accent-color);
 } 
+
+.header-contacts .icon-mail {
+    width: 16px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 10px;
+    fill: var(--secondary-text-color);
+}
+
+.header-contacts .link:hover .icon-mail,
+.header-contacts .link:focus .icon-mail,
+.header-contacts .link:hover .icon-phone,
+.header-contacts .link:focus .icon-phone {
+    fill: var(--accent-color);
+}
+
+.header-contacts .icon-phone {
+    width: 10px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+    fill: var(--secondary-text-color);
+}
+
 /* services */
 .hero-section {
     text-align: center;
     background-color: #2F303A;
     padding-top: 200px;
     padding-bottom: 200px;
-}
+
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+    url("../img/hero-photo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
 .hero-title {
     color: var(--white-color);
     width: 696px;
@@ -180,11 +219,13 @@ a {
     padding-right: 32px;
     border-radius: 4px;
     border-radius: 4px;
+    cursor: pointer;
 }
 /* about-us-features */
 .features-section {
-    padding-bottom: 0;
+    padding-top: 94px;
 }
+
 .features-item {
     display: flex;
     padding-left: 0;
@@ -195,10 +236,23 @@ a {
 .features-list {
     width: calc((100% - 3 * 30px) / 4);
     width: 270px;
-    height: 101px;
+    height: 251px;
 }
 .features-list:not(:last-child) {
     margin-right: 30px;
+}
+
+.icon-background {
+    background-color: var(--secondary-2-bg-color);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.features-icon {
+    width: 70px;
+    height: 70px;
 }
 
 .features-title {
@@ -218,6 +272,11 @@ a {
     color: var(--secondary-text-color)
 }
 /* about-us-gallery */
+.gallery-section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
 .about-us {
     display: flex;
     padding-left: 0;
@@ -227,10 +286,11 @@ a {
 .about-us .item {
     width: calc((100% - 2 * 30px) / 3);
     margin-right: 30px;
+    padding-bottom: 0;
 }
 .about-us .item:last-child {
     margin-right: 0;
-  }
+}
 
 /* our-team */
 .team-section {
@@ -248,10 +308,25 @@ a {
 .team-list .item {
     width: calc((100% - 30px * 3) / 4);
     margin-right: 30px;
+
+    text-align: center;
+    padding-bottom: 30px;
+    background-color: var(--white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
 }
 .team-list .item:last-child {
     margin-right: 0;
 }
+
+.item {
+    text-align: center;
+    padding-bottom: 30px;
+    background-color: 
+    var(--primary-bg-color)
+}
+
 .team-image {
     margin-bottom: 30px;
 }
@@ -269,15 +344,102 @@ a {
     font-size: 16px;
     line-height: 1.19;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 16;
     letter-spacing: 0.03em;
 }
+
+.social-nav {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.social-link {
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: #AFB1B8;
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+    fill: var(--white-color);
+}
+
+/* Постоянные клиенты */
+
+.clients-section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.clients-list {
+    display: flex;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.clients-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.clients-link {
+    color: #afb1b8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 90px;
+    border: 1px solid #afb1b8;
+    border-radius: 4px;
+}
+
+.clients-icon {
+    fill: currentColor;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    border: 1px solid var(--accent-color);
+}
+
+.clients-link:hover .clients-icon {
+    fill: var(--accent-color);
+}
+
 /* footer */
 .footer {
     background-color: var(--secondary-1-bg-color);
-    padding-top: 60px;
-    padding-bottom: 60px;
 }
+
+.container-footer {
+    max-width: 250px;
+	margin-left: 0px;
+	margin-right: 70px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
 .footer-logo {
     color: var(--white-color);
     font-family: "Raleway", sans-serif;
@@ -307,6 +469,29 @@ a {
     color: var(--accent-color);
 }
 
+.footer-join {
+    padding-top: 72px;
+    padding-bottom: 100px;
+}
+
+.footer-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+}
+
+.social-icon.footer-icon {
+    fill: var(--white-color);
+}
+
+.footer-social-link {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* portfolio */
 .our-works {
     padding-top: 94px;
@@ -323,6 +508,11 @@ a {
     align-items: flex-end;
     margin-bottom: 50px;
 }
+
+.filter-button .item {
+    padding-bottom: 0;
+}
+
 .filter-button .item:not(:first-child) {
     margin-left: 8px;
   }
@@ -352,13 +542,20 @@ a {
 }
 .portfolio-list .item {
     width: calc((100% - 30px * 2) / 3);
+    border: 1px solid #EEEEEE;
 }
 .portfolio-list .item:not(:nth-child(3n)) {
     margin-right: 30px;
 }
 .portfolio-list .item:not(:nth-last-child(-n + 3)) {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
+
+.portfolio-list .item:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .image-portfolio {
     margin-bottom: 20px;
 }
