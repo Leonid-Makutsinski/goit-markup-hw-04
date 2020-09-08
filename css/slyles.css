@@ -169,11 +169,13 @@ a {
 
 /* services */
 .hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background-color: #2F303A;
-    padding-top: 200px;
-    padding-bottom: 200px;
-
+    
     max-width: 1600px;
     height: 600px;
     margin-left: auto;
@@ -308,9 +310,10 @@ a {
 .team-list .item {
     width: calc((100% - 30px * 3) / 4);
     margin-right: 30px;
+    padding-bottom: 0;
+    height: 428px;
 
     text-align: center;
-    padding-bottom: 30px;
     background-color: var(--white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -322,7 +325,6 @@ a {
 
 .item {
     text-align: center;
-    padding-bottom: 30px;
     background-color: 
     var(--primary-bg-color)
 }
@@ -545,6 +547,12 @@ a {
     width: calc((100% - 30px * 2) / 3);
     border: 1px solid #EEEEEE;
 }
+
+.desc-portfolio {
+    text-align: left;
+    padding: 20px 24px;
+}
+
 .portfolio-list .item:not(:nth-child(3n)) {
     margin-right: 30px;
 }
@@ -557,9 +565,6 @@ a {
      0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.image-portfolio {
-    margin-bottom: 20px;
-}
 .desc-portfolio {
     padding-right: 24px;
     padding-left: 24px;
@@ -578,6 +583,8 @@ a {
     color: var(--secondary-text-color);
     font-size: 16px;
     line-height: 1.87;
+    margin-top: 0;
+    margin-bottom: 0;
 }
     
 
